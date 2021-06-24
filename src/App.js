@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Dashboard from './components/Dashboard/Dashboard';
 import Preferences from './components/Preferences/Preferences';
@@ -6,7 +6,6 @@ import Login from './components/Login/Login';
 import useToken from './components/App/useToken';
 import Rig from './components/Rig/Rig';
 
-import logo from './logo.svg';
 import './App.css';
 
 function App() {

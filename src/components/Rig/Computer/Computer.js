@@ -50,10 +50,6 @@ const HDDOptions = [
 
 class Computer extends Component
 {
-    constructor(){
-        super();
-    }
-
     render(){
         const {title} = this.props;
 
