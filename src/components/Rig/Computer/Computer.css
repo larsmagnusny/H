@@ -1,0 +1,15 @@
+.computerNode {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    border: 1px solid #dfdfdf;
+    padding: 0.5em 2em 0.5em 2em;
+}
+
+.computerNode .iconContainer {
+
+}
+
+.computerNode .computerContents {
+    width: 100%;
+}
