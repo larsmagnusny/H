@@ -4,7 +4,7 @@ import './Login.css';
 
 
 async function loginUser(credentials) {
- return fetch('https://gray-coast-0cb572d03.azurestaticapps.net:81/login', {
+ return fetch('https://hloginapi.azurewebsites.net/Login', {
    method: 'POST',
    headers: {
      'Content-Type': 'application/json'
