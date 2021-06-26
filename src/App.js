@@ -41,7 +41,7 @@ function App() {
 
   const removeToken = () => {
     sessionStorage.removeItem('token');
-    window.location.href = "/login";
+    window.location.href = "/";
   }
 
   return (
