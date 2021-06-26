@@ -5,6 +5,7 @@ import Preferences from './components/Preferences/Preferences';
 import Login from './components/Login/Login';
 import useToken from './components/App/useToken';
 import Rig from './components/Rig/Rig';
+import Nav from './components/Nav/Nav';
 
 import './App.css';
 
@@ -19,6 +20,7 @@ function App() {
     <div className="wrapper">
       <h1>Application</h1>
       <BrowserRouter>
+        <Nav />
         <Switch>
           <Route path="/dashboard">
             <Dashboard />
