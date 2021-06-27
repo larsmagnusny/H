@@ -9,10 +9,6 @@ function getToken(){
   }
 
 export default class Rig extends React.Component {
-    constructor(props){
-        super(props);
-    }
-
     componentWillMount(){
         fetch('https://hloginapi.azurewebsites.net/computer?token=' + getToken(), {
             method: 'GET',
