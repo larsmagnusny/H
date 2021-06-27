@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { HashRouter, Route, BrowserRouter, Switch } from 'react-router-dom';
 import Dashboard from './components/Dashboard/Dashboard';
 import Preferences from './components/Preferences/Preferences';
 import Login from './components/Login/Login';
@@ -16,25 +16,12 @@ function App() {
   if(!token) {
     return (
       <div>
-        <BrowserRouter>
-          <Switch>
-          <Route
-                exact
-                path="/"
-                render={() => {
-                    return (
-                      <Redirect to="/login" /> 
-                    )
-                }}
-              />
-            <Route path="/login">
-              <Login setToken={setToken} />
-            </Route>
-            <Route path="/register">
-              <Register />
-            </Route>
-          </Switch>
-        </BrowserRouter>
+        <HashRouter>
+          <Route exact path="/">
+            <Login setToken={setToken} />
+          </Route>
+          <Route path="/register" component={Register} />
+        </HashRouter>
       </div>
     );
   }
@@ -48,20 +35,12 @@ function App() {
     <div className="wrapper">
       <h1>Application</h1>
       <button onClick={removeToken}>Logout</button>
-      <BrowserRouter>
+      <HashRouter>
         <Nav />
-        <Switch>
-          <Route path="/dashboard">
-            <Dashboard />
-          </Route>
-          <Route path="/rig">
-            <Rig />
-          </Route>
-          <Route path="/preferences">
-            <Preferences />
-          </Route>
-        </Switch>
-      </BrowserRouter>
+        <Route path="/dashboard" component={Dashboard} />
+        <Route path="/rig" component={Rig} />
+        <Route path="/preferences" component={Preferences} />
+      </HashRouter>
     </div>
   );
 }
