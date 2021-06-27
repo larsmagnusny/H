@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { HashRouter, Route, useLocation } from 'react-router-dom';
+import React from 'react';
+import { HashRouter, Route } from 'react-router-dom';
 import Dashboard from './components/Dashboard/Dashboard';
 import Preferences from './components/Preferences/Preferences';
 import Login from './components/Login/Login';
