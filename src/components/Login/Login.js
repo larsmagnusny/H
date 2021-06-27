@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './Login.css';
 
@@ -41,7 +42,7 @@ export default function Login({setToken})
                     <input type="password" onChange={e => setPassword(e.target.value)} />
                 </label>
                 <div>
-                <a href="/register">Register?</a>
+                <Link to="/register">Register?</Link>
                 </div>
                 <div>
                     <button type="submit" className="btn">Login</button>
