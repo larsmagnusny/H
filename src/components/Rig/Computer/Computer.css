@@ -1,7 +1,7 @@
 .computerNode {
     display: flex;
     align-items: center;
-    width: 300px;
+    width: 50%;
     border: 1px solid #dfdfdf;
     padding: 0.5em 2em 0.5em 2em;
 }
@@ -12,4 +12,20 @@
 
 .computerNode .computerContents {
     width: 100%;
+    padding: 1em;
+}
+
+.slots {
+    display: inline-block;
+    width: 50%;
+}
+
+.slots .slotsContent {
+    display: flex;
+}
+
+.slots .slotsContent .slot {
+    margin: 0.2em;
+    padding: 1em;
+    border: 1px solid #dfdfdf;
 }
