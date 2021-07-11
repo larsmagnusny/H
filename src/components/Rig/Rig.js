@@ -10,10 +10,11 @@ function getToken(){
 
 export default class Rig extends React.Component {
     componentWillMount(){
-        fetch('https://hloginapi.azurewebsites.net/computer?token=' + getToken(), {
+        fetch('https://hloginapi.azurewebsites.net/computer', {
             method: 'GET',
             headers: {
-              'Content-Type': 'application/json'
+              'Content-Type': 'application/json',
+              'token': getToken()
             }
           })
           .then(data => data.json())

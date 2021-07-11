@@ -30,40 +30,8 @@ export default class App extends React.Component {
     super(props);
 
     this.state = {
-      token: null,
-      valid: false,
-      fetching: true
+      token: getToken()
     }
-  }
-
-
-
-  componentWillMount(){
-    var token = getToken();
-    if(token != null){
-      fetch('https://hloginapi.azurewebsites.net/CheckToken', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: sessionStorage.getItem('token')
-          })
-          .then(data => data.json())
-          .then(data => {
-            if(data === true){
-              this.setState({token: token, valid: data, fetching: false});
-            }
-            else
-            {
-              removeToken();
-              document.location.href = "/";
-            }
-          });
-      }
-      else
-      {
-        this.setState({token: null, valid: false, fetching: false});
-      }
   }
 
   render() {
@@ -73,16 +41,8 @@ export default class App extends React.Component {
     }
 
     var token = this.state.token;
-    const isValid = this.state.valid;
-    const loading = this.state.fetching;
 
-    if(loading){
-      return (
-        <div>Wait a moment...</div>
-      )
-    }
-
-    if(!token || !isValid) {
+    if(!token) {
       return (
         <div>
           <HashRouter>
